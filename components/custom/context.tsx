@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
 interface IFormContext {
-    handleClick: (direction: string) => void;
-    step: number;
+  handleClick: (direction: string) => void;
+  step: number;
 }
 const FormContext = createContext<IFormContext>({
-    handleClick: () => {},
-    step: 0
+  handleClick: () => {},
+  step: 0,
 });
 
 const steps = [
@@ -27,9 +27,13 @@ export function FormProvider({ children }: { children: ReactNode }) {
     newStep >= 0 && newStep <= steps.length && setStep(newStep);
   };
 
-  return <FormContext.Provider value={{handleClick, step}}>{children}</FormContext.Provider>;
+  return (
+    <FormContext.Provider value={{ handleClick, step }}>
+      {children}
+    </FormContext.Provider>
+  );
 }
 
 export function useFormState() {
-    return useContext(FormContext)
+  return useContext(FormContext);
 }

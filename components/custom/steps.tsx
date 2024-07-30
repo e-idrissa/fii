@@ -20,18 +20,18 @@ const Steps = (props: Props) => {
 
   switch (step) {
     case 0:
-      return <Identity steps={steps}/>;
+      return <Identity steps={steps} />;
     case 1:
-      return <Responsibles steps={steps}/>;
+      return <Responsibles steps={steps} />;
     case 2:
-      return <Salvation steps={steps}/>;
+      return <Salvation steps={steps} />;
     case 3:
-      return <Engagement steps={steps}/>;
+      return <Engagement steps={steps} />;
     case 4:
       return <Complete />;
     default:
-      return <Identity steps={steps}/>;
+      return <Identity steps={steps} />;
   }
 };
 
-export default Steps
+export default Steps;

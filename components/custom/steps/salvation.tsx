@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { StepperContext } from "@/context/stepper-context";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -24,7 +21,7 @@ const SalvationSchema = z.object({
 });
 
 type Props = {
-  steps: string[],
+  steps: string[];
 };
 
 const Salvation = ({ steps }: Props) => {
@@ -44,12 +41,14 @@ const Salvation = ({ steps }: Props) => {
     console.log(step);
   };
 
-  const {isValid, isSubmitting} = form.formState
+  const { isValid, isSubmitting } = form.formState;
 
   return (
     <div className="flex flex-col justify-around md:mt-4">
       <Stepper steps={steps} currentStep={step} />
-      <h1 className="text-xl font-semibold md:hidden text-gray-700 uppercase mb-4">Salvation</h1>
+      <h1 className="text-xl font-semibold md:hidden text-gray-700 uppercase mb-4">
+        Salvation
+      </h1>
       <div className="md:mt-10">
         <Form {...form}>
           <form
